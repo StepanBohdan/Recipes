@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  serverElements = [{type: 'server-element', name: 'Servername', content: 'Some content for server-element'}];
+
+  onServerAdded(serverData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'server-element',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
 }
 

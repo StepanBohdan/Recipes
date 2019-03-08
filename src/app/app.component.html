@@ -2,16 +2,22 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h2>I`m working APP</h2>
+            <h2>My Recipes</h2>
 
             <app-recipes></app-recipes>
             <app-shopping-list></app-shopping-list>
         </div>
     </div>
+
+    <hr>
+
+    <!--<input class="form-control" type="text" [(ngModel)]="app">-->
+    <app-servers
+    (serverCreated)="onServerAdded($event)"
+    ></app-servers>
+
+    <app-server-element *ngFor="let serverElement of serverElements"
+                [srvElement]="serverElement"
+    >
+    </app-server-element>
 </div>
-
-<input type="text" [(ngModel)]="app">
-
- <app-servers>
-    app server
-</app-servers>

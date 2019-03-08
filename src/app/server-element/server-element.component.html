@@ -1,0 +1,14 @@
+<p [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="{online: serverStatus === 'online'}">
+  {{ serverName }} is {{ serverId }} and his status is {{ getServerStatus() }}
+</p>
+
+
+<div class="panel">
+  <div class="panel-heading">{{ element.name }}</div>
+  <div class="panel-body">
+    <p *ngIf="element.type === 'server-element'">
+      {{ element.content }}
+    </p>
+  </div>
+</div>
