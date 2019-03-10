@@ -5,7 +5,7 @@
 
 
 <div class="panel">
-  <div class="panel-heading">{{ element.name }}</div>
+  <div class="panel-heading" #heading>{{ element.name }}</div>
   <div class="panel-body">
     <p *ngIf="element.type === 'server-element'">
       {{ element.content }}

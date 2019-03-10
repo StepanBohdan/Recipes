@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -12,6 +12,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class ServerElementComponent implements OnInit {
     @Input('srvElement') element: {type: string, name: string, content: string};
+    @ViewChild('heading') header: ElementRef;
     serverId = 10;
     serverStatus = 'offline';
 
@@ -25,7 +26,8 @@ export class ServerElementComponent implements OnInit {
    getColor() {
     return this.serverStatus ===  'online' ? 'green' : 'red';
    }
-   ngOnInit(): void {
+   ngOnInit() {
+      console.log('Text Content ' + this.header.nativeElement.textContent);
    }
 
 }

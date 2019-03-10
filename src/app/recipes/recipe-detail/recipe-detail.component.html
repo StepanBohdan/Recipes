@@ -1,23 +1,20 @@
-<div class="row">
+<div class="row mb-4">
   <div class="col-sm-12">
-    <img class="img-fluid"
-         src=""
-         alt="">
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-12">
-    <h2>Recipe name</h2>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-12">
+    <div class="wrapImg">
+      <img class="img-fluid"
+           [src]="recipe.imagePath"
+           [alt]="recipe.name">
+    </div>
+
+
+    <h2>{{ recipe.name }}</h2>
+
     <div class="btn-group">
 
       <button class="btn btn-primary dropdown-toggle"
               type="button">
         Manage recipe <span class="caret"></span>
-        </button>
+      </button>
       <ul class="dropdown-menu">
         <li>
           <a href="#">To shopping list</a>
@@ -30,16 +27,9 @@
         </li>
       </ul>
     </div>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-sm-12">
-    <p>Description</p>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-12">
+    <p>{{ recipe.description }}</p>
+
     <p>Ingredients</p>
   </div>
 </div>
