@@ -14,6 +14,27 @@ export class AppComponent {
   oddNumbers = [2, 4];
   testSwitch = 5;
 
+  accounts = [
+      {
+        name: 'Account1',
+        status: 'active'
+      },{
+        name: 'Account2',
+        status: 'inactive'
+      },{
+        name: 'Account3',
+        status: 'unknown'
+      }
+  ];
+
+  onAccountAdded(newAccount: {name: string, status: string}) {
+    this.accounts.push(newAccount);
+  }
+
+  onStatusChanges(updateInfo: {id: number, newStatus: string}) {
+    this.accounts[updateInfo.id].status = updateInfo.newStatus;
+  }
+
   onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
       type: 'server-element',

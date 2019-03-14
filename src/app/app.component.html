@@ -50,4 +50,17 @@
         <p *ngSwitchDefault>testSwitch is Default</p>
     </div>
 
+
+    <div class="row">
+        <div class="col-sm-12 col-md-8 col-md-offset-2">
+            <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>
+            <hr>
+            <app-account
+            *ngFor="let acc of accountsl let i = index"
+            [account]="acc"
+            [id]="i"
+            (statusChanged)="onStatusChanges($event)"></app-account>
+        </div>
+    </div>
+
 </div>
