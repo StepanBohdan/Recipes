@@ -19,6 +19,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { AccountsService } from "./accounts.service";
+import { ShoppingListService } from "./shopping-list/shopping-list.service";
 // import { LoggingService } from "./logging.service";
 
 @NgModule({
@@ -44,7 +45,7 @@ import { AccountsService } from "./accounts.service";
     BrowserModule,
       FormsModule
   ],
-  providers: [AccountsService],
+  providers: [AccountsService, ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
