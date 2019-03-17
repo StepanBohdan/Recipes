@@ -1,6 +1,25 @@
+<h2>Second feature</h2>
+<div class="row">
+  <div class="col-sm-12 col-md-4">
+    <div class="list-group">
+      <a href="#"
+         class="list-group-item"
+      *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-4">
+    <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
+
+  </div>
+</div>
+
+<h2>First feature</h2>
+<hr>
 <!--<input type="text"-->
 <!--(input)="onUpdateServerName($event)">-->
-
 <input class="form-control"
        type="text"
        [(ngModel)]="newServerName">
@@ -8,7 +27,6 @@
        type="text"
        [(ngModel)]="newServerContent">
 <!--{{ serverName }}-->
-
 <button class="btn btn-primary"
 (click)="onAddServer()">
   Add server
@@ -17,11 +35,9 @@
 <!--<p>-->
   <!--{{ serverCreationStatus }}-->
 <!--</p>-->
-
 <p *ngIf="serverCreated">
   Server was created, server name is {{ serverName }}
 </p>
-
 <!--<p *ngIf="!serverCreated; else noServer ">No server-element was created</p>-->
 <!--<ng-template #noServer>-->
   <!--<p>-->

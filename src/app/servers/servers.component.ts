@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ServersService }                          from './servers.service';
+import { ActivatedRoute, Router }                  from '@angular/router';
 
 @Component({
   selector: 'app-servers',
@@ -11,12 +13,15 @@ export class ServersComponent implements OnInit {
   // serverName = 'test';
   // serverCreated = false;
   // servers = ['testServer', 'testServer2'];
+    private servers: {id: number, name: string, status: string}[] = [];
 
     @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
     newServerName = '';
     newServerContent = '';
 
-  constructor() {
+  constructor(private serversService: ServersService,
+              private router: Router,
+              private route: ActivatedRoute) {
      // setTimeout(() => {
      //   this.allowNewServer = true;
      // },
@@ -24,6 +29,7 @@ export class ServersComponent implements OnInit {
   }
 
   ngOnInit(): void {
+      // this.servers = this.serversService.getServers();
   }
 
   //   onServerCreate() {
@@ -50,6 +56,10 @@ export class ServersComponent implements OnInit {
           serverName: this.newServerName,
           serverContent: this.newServerContent
       });
+    }
+
+    onReload() {
+      // this.router.navigate(['/servers'], {relativeTo: this.route});
     }
 }
 
