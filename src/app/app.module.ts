@@ -2,6 +2,7 @@ import { BrowserModule }        from '@angular/platform-browser';
 import { NgModule }             from '@angular/core';
 import { FormsModule }          from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule }        from '@angular/common/http';
 
 import { AccountComponent }         from './account/account.component';
 import { AccountsService }          from './accounts.service';
@@ -9,6 +10,7 @@ import { AppComponent }             from './app.component';
 import { BasicHighlightDirective }  from './directive/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './directive/better-highlight.directive';
 import { DropdownDirective }        from './shared/dropdown.directive';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { HeaderComponent }          from './header/header.component';
 import { HomeComponent }            from './home/home.component';
 import { NewAccountComponent }      from './new-account/new-account.component';
@@ -17,6 +19,7 @@ import { RecipeDetailComponent }    from './recipes/recipe-detail/recipe-detail.
 import { RecipeItemComponent }      from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { RecipeListComponent }      from './recipes/recipe-list/recipe-list.component';
 import { ServerElementComponent }   from './server-element/server-element.component';
+import { ServersService }          from './servers/servers.service';
 import { ServersComponent }        from './servers/servers.component';
 import { ShoppingDetailComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingListComponent }   from './shopping-list/shopping-list.component';
@@ -24,15 +27,19 @@ import { ShoppingListService }     from './shopping-list/shopping-list.service';
 import { UnlessDirective }         from './directive/unless.directive';
 import { UsersComponent }          from './users/users.component';
 import { UserComponent }           from './users/user/user.component';
-import { HttpClientModule }        from '@angular/common/http';
-import { ServersService }          from './servers/servers.service';
+import { ServerComponent } from './servers/server/server.component';
 // import { LoggingService } from "./logging.service";
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'servers', component: ServersComponent },
-    { path: 'users', component: UsersComponent },
-  { path: 'users/:id/:name', component: UserComponent }
+  { path: '', component: HomeComponent },
+  { path: 'servers', component: ServersComponent, children: [
+      { path: ':id', component: ServerComponent },
+      { path: ':id/edit', component: EditServerComponent },
+    ] },
+  { path: 'users', component: UsersComponent, children: [
+      { path: ':id/:name', component: UserComponent }
+    ]
+  },
 ];
 
 @NgModule({
@@ -42,6 +49,7 @@ const appRoutes: Routes = [
     BasicHighlightDirective,
     BetterHighlightDirective,
     DropdownDirective,
+    EditServerComponent,
     HeaderComponent,
     HomeComponent,
     NewAccountComponent,
@@ -55,18 +63,19 @@ const appRoutes: Routes = [
     ShoppingDetailComponent,
     UnlessDirective,
     UserComponent,
-    UsersComponent
+    UsersComponent,
+    ServerComponent
   ],
   imports: [
-      BrowserModule,
-      FormsModule,
-      HttpClientModule,
-      RouterModule.forRoot(appRoutes)
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
-      AccountsService,
+    AccountsService,
     ShoppingListService,
-      ServersService
+    ServersService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,16 @@
-<p>
-  users works!
-</p>
+<div class="row">
+    <div class="col-sm-12 col-md-4">
+        <div class="list-group">
+            <a class="list-group-item"
+            [routerLink]="['/users', user.id, user.name]"
+            *ngFor="let user of users">
+                {{ user.name }}
+            </a>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+        <!--<app-user></app-user>-->
+        <router-outlet></router-outlet>
+    </div>
+</div>
