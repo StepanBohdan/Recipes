@@ -1,5 +1,4 @@
 import { NgModule }             from '@angular/core';
-import { CommonModule }         from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuardService }      from "./auth-guard.service";
@@ -12,14 +11,21 @@ import { ServersComponent }      from "./servers/servers.component";
 import { UserComponent }         from "./users/user/user.component";
 import { UsersComponent }        from "./users/users.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { ServerResolverService } from "./servers/server/server-resolver.service";
+import { RecipesComponent }      from "./recipes/recipes.component";
+import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  // { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
+  { path: 'recipes', component: RecipesComponent },
+  { path: 'shopping-list', component: ShoppingListComponent},
+
   { path: 'servers',
     canActivateChild: [AuthGuardService],
     component: ServersComponent,
     children: [
-      { path: ':id', component: ServerComponent },
+      { path: ':id', component: ServerComponent, resolve: {server: ServerResolverService} },
       { path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard] }
     ] },
   { path: 'users', component: UsersComponent, children: [
@@ -32,7 +38,7 @@ const appRoutes: Routes = [
 ];
 @NgModule({
   imports: [
-    CommonModule,
+    // RouterModule.forRoot(appRoutes, {useHash: true})
     RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule]

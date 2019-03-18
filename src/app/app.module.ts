@@ -26,13 +26,14 @@ import { RecipeListComponent }      from './recipes/recipe-list/recipe-list.comp
 import { ServerComponent }          from './servers/server/server.component';
 import { ServerElementComponent }   from './server-element/server-element.component';
 import { ServersService }           from './servers/servers.service';
-import { ServersComponent }         from './servers/servers.component';
-import { ShoppingDetailComponent }  from './shopping-list/shopping-edit/shopping-edit.component';
-import { ShoppingListComponent }    from './shopping-list/shopping-list.component';
-import { ShoppingListService }      from './shopping-list/shopping-list.service';
-import { UnlessDirective }          from './directive/unless.directive';
-import { UsersComponent }           from './users/users.component';
-import { UserComponent }            from './users/user/user.component';
+import { ServersComponent }        from './servers/servers.component';
+import { ShoppingDetailComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { ShoppingListComponent }   from './shopping-list/shopping-list.component';
+import { ShoppingListService }     from './shopping-list/shopping-list.service';
+import { UnlessDirective }         from './directive/unless.directive';
+import { UsersComponent }          from './users/users.component';
+import { UserComponent }           from './users/user/user.component';
+import { ServerResolverService }   from "./servers/server/server-resolver.service";
 // import { LoggingService } from "./logging.service";
 
 @NgModule({
@@ -73,7 +74,8 @@ import { UserComponent }            from './users/user/user.component';
     AuthGuardService,
     CanDeactivateGuard,
     ShoppingListService,
-    ServersService
+    ServersService,
+    ServerResolverService
   ],
   bootstrap: [AppComponent]
 })
