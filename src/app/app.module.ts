@@ -34,6 +34,8 @@ import { UnlessDirective }         from './directive/unless.directive';
 import { UsersComponent }          from './users/users.component';
 import { UserComponent }           from './users/user/user.component';
 import { ServerResolverService }   from "./servers/server/server-resolver.service";
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 // import { LoggingService } from "./logging.service";
 
 @NgModule({
@@ -60,7 +62,9 @@ import { ServerResolverService }   from "./servers/server/server-resolver.servic
     ShoppingDetailComponent,
     UnlessDirective,
     UserComponent,
-    UsersComponent
+    UsersComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     AppRoutingModule,
