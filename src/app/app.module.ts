@@ -1,7 +1,6 @@
 import { BrowserModule }        from '@angular/platform-browser';
 import { NgModule }             from '@angular/core';
 import { FormsModule }          from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule }        from '@angular/common/http';
 
 import { AccountComponent }         from './account/account.component';
@@ -28,19 +27,9 @@ import { UnlessDirective }         from './directive/unless.directive';
 import { UsersComponent }          from './users/users.component';
 import { UserComponent }           from './users/user/user.component';
 import { ServerComponent } from './servers/server/server.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from "./app-routing.module";
 // import { LoggingService } from "./logging.service";
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'servers', component: ServersComponent, children: [
-      { path: ':id', component: ServerComponent },
-      { path: ':id/edit', component: EditServerComponent },
-    ] },
-  { path: 'users', component: UsersComponent, children: [
-      { path: ':id/:name', component: UserComponent }
-    ]
-  },
-];
 
 @NgModule({
   declarations: [
@@ -64,13 +53,14 @@ const appRoutes: Routes = [
     UnlessDirective,
     UserComponent,
     UsersComponent,
-    ServerComponent
+    ServerComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [
     AccountsService,
