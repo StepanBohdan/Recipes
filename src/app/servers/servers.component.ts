@@ -42,25 +42,25 @@ export class ServersComponent implements OnInit {
   //     this.serverName = (<HTMLInputElement>event.target).value;
   // }
 
-    // onAddServer() {
-    //     this.servers.push('Another Server');
-    // }
+  // onAddServer() {
+  //     this.servers.push('Another Server');
+  // }
 
-    // onRemoveServer(id: number) {
-    //     const position = id + 1;
-    //     this.servers.splice(position, 1);
-    // }
+  // onRemoveServer(id: number) {
+  //     const position = id + 1;
+  //     this.servers.splice(position, 1);
+  // }
 
-    onAddServer() {
-      this.serverCreated.emit({
-          serverName: this.newServerName,
-          serverContent: this.newServerContent
-      });
-    }
+  onAddServer() {
+    this.serverCreated.emit({
+      serverName: this.newServerName,
+      serverContent: this.newServerContent
+    });
+  }
 
-    onReload() {
-      // this.router.navigate(['/servers'], {relativeTo: this.route});
-    }
+  onReload() {
+    // this.router.navigate(['/servers'], {relativeTo: this.route});
+  }
 }
 
 
