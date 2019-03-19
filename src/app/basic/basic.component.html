@@ -1,0 +1,32 @@
+<h2>Basic</h2>
+<div class="wrap" style="max-width: 520px;">
+  <input class="form-control" type="text" [(ngModel)]="app">
+  <app-servers
+  (serverCreated)="onServerAdded($event)"
+  ></app-servers>
+
+  <app-server-element *ngFor="let serverElement of serverElements"
+  [srvElement]="serverElement"
+  >
+  </app-server-element>
+
+  <button class="btn btn-primary"
+          (click)="onlyOdd = !onlyOdd">Show odd numbers
+  </button>
+  <div *appUnless="onlyOdd">
+    <div [ngClass]="{odd: even % 2 !== 0}"
+         [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}"
+         *ngFor="let even of evenNumbers">
+      {{ even }}
+    </div>
+  </div>
+  <p appBasicHighlight>Style with basic-highlight directive</p>
+  <p [appBetterHighlight]="'red'" defaultColor="yellow">Style with basic-highlight directive</p>
+
+  <div [ngSwitch]="testSwitch">
+    <p *ngSwitch="5">testSwitch is 5</p>
+    <p *ngSwitch="10">testSwitch is 10</p>
+    <p *ngSwitch="100">testSwitch is 100</p>
+    <p *ngSwitchDefault>testSwitch is Default</p>
+  </div>
+</div>

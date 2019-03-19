@@ -1,13 +1,14 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 
-import { AuthGuardService }      from "./auth-guard.service";
-import { CanDeactivateGuard }    from "./servers/edit-server/can-deactivate-guard.service";
-import { EditServerComponent }   from "./servers/edit-server/edit-server.component";
-import { ErrorPageComponent }    from "./error-page/error-page.component";
-import { HomeComponent }         from "./home/home.component";
-import { ServerComponent }       from "./servers/server/server.component";
-import { ServersComponent }      from "./servers/servers.component";
+import { AccountComponent }    from "./accounts/account/account.component";
+import { AuthGuardService }    from "./auth-guard.service";
+import { CanDeactivateGuard }  from "./servers/edit-server/can-deactivate-guard.service";
+import { EditServerComponent } from "./servers/edit-server/edit-server.component";
+import { ErrorPageComponent }  from "./error-page/error-page.component";
+import { HomeComponent }       from "./home/home.component";
+import { ServerComponent }     from "./servers/server/server.component";
+import { ServersComponent }    from "./servers/servers.component";
 import { UserComponent }         from "./users/user/user.component";
 import { UsersComponent }        from "./users/users.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
@@ -17,10 +18,15 @@ import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import { RecipeStartComponent }  from "./recipes/recipe-start/recipe-start.component";
 import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.component";
 import { RecipeEditComponent }   from "./recipes/recipe-edit/recipe-edit.component";
+import { AccountsComponent }     from "./accounts/accounts.component";
+import { BasicComponent }        from "./basic/basic.component";
 
 const appRoutes: Routes = [
   // { path: '', component: HomeComponent },
-  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'basic', component: BasicComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'accounts', component: AccountsComponent },
   { path: 'recipes', component: RecipesComponent, children: [
       { path: '', component: RecipeStartComponent },
       { path: 'new', component: RecipeEditComponent },

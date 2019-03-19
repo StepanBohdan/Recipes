@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }      from '@angular/forms';
 import { NgModule }         from '@angular/core';
 
-import { AccountComponent }         from './account/account.component';
+import { AccountComponent }         from './accounts/account/account.component';
 import { AccountsService }          from './accounts.service';
 import { AppComponent }             from './app.component';
 import { AppRoutingModule }         from "./app-routing.module";
@@ -36,6 +36,8 @@ import { UserComponent }           from './users/user/user.component';
 import { ServerResolverService }   from "./servers/server/server-resolver.service";
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { AccountsComponent } from './accounts/accounts.component';
+import { BasicComponent } from './basic/basic.component';
 // import { LoggingService } from "./logging.service";
 
 @NgModule({
@@ -64,7 +66,9 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     UserComponent,
     UsersComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    AccountsComponent,
+    BasicComponent
   ],
   imports: [
     AppRoutingModule,
