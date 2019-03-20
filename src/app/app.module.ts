@@ -1,7 +1,7 @@
-import { BrowserModule }    from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule }      from '@angular/forms';
-import { NgModule }         from '@angular/core';
+import { BrowserModule }                    from '@angular/platform-browser';
+import { HttpClientModule }                 from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule }                         from '@angular/core';
 
 import { AccountComponent }         from './accounts/account/account.component';
 import { AccountsComponent }        from './accounts/accounts.component';
@@ -38,6 +38,7 @@ import { ShoppingListService }      from './shopping-list/shopping-list.service'
 import { UnlessDirective }          from './directive/unless.directive';
 import { UsersComponent }           from './users/users.component';
 import { UserComponent }            from './users/user/user.component';
+import { FormsComponent } from './forms/forms.component';
 
 // import { LoggingService } from "./logging.service";
 
@@ -69,13 +70,15 @@ import { UserComponent }            from './users/user/user.component';
     RecipeStartComponent,
     RecipeEditComponent,
     AccountsComponent,
-    BasicComponent
+    BasicComponent,
+    FormsComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     AccountsService,
