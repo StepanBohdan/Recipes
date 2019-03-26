@@ -32,10 +32,10 @@ export class ServersComponent implements OnInit {
       this.servers = this.serversService.getServers();
   }
 
-  //   onServerCreate() {
-  //     this.serverCreated = true;
-  //     this.servers.push(this.serverName);
-  //     this.serverCreationStatus = 'Server is created ' + this.serverName;
+  // onServerCreate() {
+  //   this.serverCreated = true;
+  //   this.servers.push(this.serverName);
+  //   this.serverCreationStatus = 'Server is created ' + this.serverName;
   // }
 
   // onUpdateServerName(event: Event ) {

@@ -40,6 +40,9 @@ import { ShoppingListService }     from './shopping-list/shopping-list.service';
 import { UnlessDirective }         from './directive/unless.directive';
 import { UsersComponent }          from './users/users.component';
 import { UserComponent }           from './users/user/user.component';
+import { ShortenPipe } from './shorten.pipe';
+import { PipeComponent } from './pipe/pipe.component';
+import { FilterPipe } from './filter.pipe';
 
 // import { LoggingService } from "./logging.service";
 
@@ -72,7 +75,10 @@ import { UserComponent }           from './users/user/user.component';
     UserComponent,
     UsersComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ShortenPipe,
+    PipeComponent,
+    FilterPipe
   ],
   imports: [
     AppRoutingModule,

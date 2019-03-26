@@ -2,31 +2,35 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 
 import { AccountComponent }    from "./accounts/account/account.component";
+import { AccountsComponent }     from "./accounts/accounts.component";
 import { AuthGuardService }    from "./auth-guard.service";
+import { BasicComponent }        from "./basic/basic.component";
 import { CanDeactivateGuard }  from "./servers/edit-server/can-deactivate-guard.service";
 import { EditServerComponent } from "./servers/edit-server/edit-server.component";
 import { ErrorPageComponent }  from "./error-page/error-page.component";
+import { FormsComponent }        from "./forms/forms.component";
 import { HomeComponent }       from "./home/home.component";
-import { ServerComponent }     from "./servers/server/server.component";
-import { ServersComponent }    from "./servers/servers.component";
-import { UserComponent }         from "./users/user/user.component";
-import { UsersComponent }        from "./users/users.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { PipeComponent }         from "./pipe/pipe.component";
 import { ServerResolverService } from "./servers/server/server-resolver.service";
 import { RecipesComponent }      from "./recipes/recipes.component";
-import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 import { RecipeStartComponent }  from "./recipes/recipe-start/recipe-start.component";
 import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.component";
 import { RecipeEditComponent }   from "./recipes/recipe-edit/recipe-edit.component";
-import { AccountsComponent }     from "./accounts/accounts.component";
-import { BasicComponent }        from "./basic/basic.component";
+import { ServerComponent }       from "./servers/server/server.component";
+import { ServersComponent }      from "./servers/servers.component";
+import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
+import { UserComponent }         from "./users/user/user.component";
+import { UsersComponent }        from "./users/users.component";
 
 const appRoutes: Routes = [
   // { path: '', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'accounts', component: AccountsComponent },
   { path: 'basic', component: BasicComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'accounts', component: AccountsComponent },
+  { path: 'login', component: FormsComponent },
+  { path: 'pipe', component: PipeComponent },
   { path: 'recipes', component: RecipesComponent, children: [
       { path: '', component: RecipeStartComponent },
       { path: 'new', component: RecipeEditComponent },
