@@ -33,6 +33,15 @@ export class FirebaseComponent {
       );
   }
 
+  onGet() {
+    this.firebaseServerService.getServers()
+      .subscribe(
+        (servers: any[])=> console.log(servers),
+        // (servers:any[]) => this.servers = servers,
+        (error) => console.log(error)
+      );
+  }
+
   private generateId() {
     return Math.round(Math.random() * 10000);
   }
