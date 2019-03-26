@@ -19,6 +19,7 @@ import { EditServerComponent }      from './servers/edit-server/edit-server.comp
 import { ErrorPageComponent }       from './error-page/error-page.component';
 import { HeaderComponent }          from './header/header.component';
 import { HomeComponent }            from './home/home.component';
+import { FormsComponent }          from './forms/forms.component';
 import { NewAccountComponent }      from './new-account/new-account.component';
 import { PageNotFoundComponent }    from './page-not-found/page-not-found.component';
 import { RecipeEditComponent }      from './recipes/recipe-edit/recipe-edit.component';
@@ -27,30 +28,33 @@ import { RecipesComponent }         from './recipes/recipes.component';
 import { RecipeDetailComponent }    from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeItemComponent }      from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { RecipeListComponent }      from './recipes/recipe-list/recipe-list.component';
+import { RecipeService }           from "./recipes/recipe.service";
 import { ServerComponent }          from './servers/server/server.component';
 import { ServerElementComponent }   from './server-element/server-element.component';
 import { ServerResolverService }    from "./servers/server/server-resolver.service";
 import { ServersComponent }         from './servers/servers.component';
 import { ServersService }           from './servers/servers.service';
-import { ShoppingDetailComponent }  from './shopping-list/shopping-edit/shopping-edit.component';
-import { ShoppingListComponent }    from './shopping-list/shopping-list.component';
-import { ShoppingListService }      from './shopping-list/shopping-list.service';
-import { UnlessDirective }          from './directive/unless.directive';
-import { UsersComponent }           from './users/users.component';
-import { UserComponent }            from './users/user/user.component';
-import { FormsComponent } from './forms/forms.component';
+import { ShoppingDetailComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { ShoppingListComponent }   from './shopping-list/shopping-list.component';
+import { ShoppingListService }     from './shopping-list/shopping-list.service';
+import { UnlessDirective }         from './directive/unless.directive';
+import { UsersComponent }          from './users/users.component';
+import { UserComponent }           from './users/user/user.component';
 
 // import { LoggingService } from "./logging.service";
 
 @NgModule({
   declarations: [
     AccountComponent,
+    AccountsComponent,
     AppComponent,
+    BasicComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
     DropdownDirective,
     EditServerComponent,
     ErrorPageComponent,
+    FormsComponent,
     HeaderComponent,
     HomeComponent,
     NewAccountComponent,
@@ -68,10 +72,7 @@ import { FormsComponent } from './forms/forms.component';
     UserComponent,
     UsersComponent,
     RecipeStartComponent,
-    RecipeEditComponent,
-    AccountsComponent,
-    BasicComponent,
-    FormsComponent
+    RecipeEditComponent
   ],
   imports: [
     AppRoutingModule,
@@ -85,6 +86,7 @@ import { FormsComponent } from './forms/forms.component';
     AuthService,
     AuthGuardService,
     CanDeactivateGuard,
+    RecipeService,
     ShoppingListService,
     ServersService,
     ServerResolverService
