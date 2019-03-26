@@ -8,6 +8,7 @@ import { BasicComponent }        from "./basic/basic.component";
 import { CanDeactivateGuard }  from "./servers/edit-server/can-deactivate-guard.service";
 import { EditServerComponent } from "./servers/edit-server/edit-server.component";
 import { ErrorPageComponent }  from "./error-page/error-page.component";
+import { FirebaseComponent }     from "./firebase/firebase.component";
 import { FormsComponent }        from "./forms/forms.component";
 import { HomeComponent }       from "./home/home.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'accounts', component: AccountsComponent },
   { path: 'basic', component: BasicComponent },
+  { path: 'firebase', component: FirebaseComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: FormsComponent },
   { path: 'pipe', component: PipeComponent },
