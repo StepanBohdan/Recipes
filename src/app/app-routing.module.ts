@@ -14,6 +14,8 @@ import { HomeComponent }       from "./home/home.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { PipeComponent }         from "./pipe/pipe.component";
 import { ServerResolverService } from "./servers/server/server-resolver.service";
+import { SignupComponent }       from "./auth/signup/signup.component";
+import { SigninComponent }       from "./auth/signin/signin.component";
 import { RecipesComponent }      from "./recipes/recipes.component";
 import { RecipeStartComponent }  from "./recipes/recipe-start/recipe-start.component";
 import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.component";
@@ -54,6 +56,8 @@ const appRoutes: Routes = [
   },
   // { path: 'not-found', component: PageNotFoundComponent },
   { path: 'not-found', component: ErrorPageComponent, data: { message: "Not found" } },
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
   { path: '**', redirectTo: '/not-found' },
 ];
 @NgModule({

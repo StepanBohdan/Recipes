@@ -1,9 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a routerLink="/" class="navbar-brand">Recipe book</a>
+      <a routerLink="/" class="navbar-brand">Recipe</a>
     </div>
-    <div class="collapse navbar-collapse">
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#hamburger"
+            aria-controls="hamburger"
+            aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="hamburger">
       <ul class="navbar-nav nav-tabs mr-auto">
         <li class="nav-item" routerLinkActive="active"
             [routerLinkActiveOptions]="{exact: true}">
@@ -40,6 +48,12 @@
       </ul>
 
       <ul class="navbar-nav mr-auto navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signin">Login</a>
+        </li>
         <li class="dropdown" appDropdown>
           <a class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">

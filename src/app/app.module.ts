@@ -9,13 +9,14 @@ import { AccountsService }          from './accounts.service';
 import { AppComponent }             from './app.component';
 import { AppRoutingModule }         from "./app-routing.module";
 import { AuthGuardService }         from "./auth-guard.service";
-import { AuthService }              from "./auth.service";
+import { AuthSimpleService }        from "./auth-simple.service";
+import { AuthService }              from "./auth/auth.service";
 import { BasicComponent }           from './basic/basic.component';
 import { BasicHighlightDirective }  from './directive/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './directive/better-highlight.directive';
-import { CanDeactivateGuard }    from "./servers/edit-server/can-deactivate-guard.service";
-import { DropdownDirective }     from './shared/dropdown.directive';
-import { EditServerComponent }   from './servers/edit-server/edit-server.component';
+import { CanDeactivateGuard }       from "./servers/edit-server/can-deactivate-guard.service";
+import { DropdownDirective }        from './shared/dropdown.directive';
+import { EditServerComponent }      from './servers/edit-server/edit-server.component';
 import { ErrorPageComponent }    from './error-page/error-page.component';
 import { DataStorageService }    from "./shared/data-storage.service";
 import { HeaderComponent }       from './header/header.component';
@@ -46,6 +47,8 @@ import { ShortenPipe }           from './pipes/shorten.pipe';
 import { UnlessDirective }       from './directive/unless.directive';
 import { UsersComponent }        from './users/users.component';
 import { UserComponent }         from './users/user/user.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 // import { LoggingService } from "./logging.service";
 
@@ -82,7 +85,9 @@ import { UserComponent }         from './users/user/user.component';
     ShortenPipe,
     UnlessDirective,
     UserComponent,
-    UsersComponent
+    UsersComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     AppRoutingModule,
@@ -94,6 +99,7 @@ import { UserComponent }         from './users/user/user.component';
   providers: [
     AccountsService,
     AuthService,
+    AuthSimpleService,
     AuthGuardService,
     CanDeactivateGuard,
     DataStorageService,
