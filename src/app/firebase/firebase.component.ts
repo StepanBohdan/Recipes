@@ -7,6 +7,7 @@ import { FirebaseServerService } from "./firebase-server.service";
   styleUrls: ['./firebase.component.css']
 })
 export class FirebaseComponent {
+  appName = this.firebaseServerService.getAppName();
   servers = [
     {
       name: 'TestServer',
@@ -37,7 +38,6 @@ export class FirebaseComponent {
     this.firebaseServerService.getServers()
       .subscribe(
         (servers: any[])=> console.log(servers),
-        // (servers:any[]) => this.servers = servers,
         (error) => console.log(error)
       );
   }
