@@ -1,16 +1,17 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 
-import { AccountComponent }    from "./accounts/account/account.component";
-import { AccountsComponent }     from "./accounts/accounts.component";
-import { AuthGuardService }    from "./auth-guard.service";
-import { BasicComponent }        from "./basic/basic.component";
-import { CanDeactivateGuard }  from "./servers/edit-server/can-deactivate-guard.service";
-import { EditServerComponent } from "./servers/edit-server/edit-server.component";
-import { ErrorPageComponent }  from "./error-page/error-page.component";
-import { FirebaseComponent }     from "./firebase/firebase.component";
-import { FormsComponent }        from "./forms/forms.component";
-import { HomeComponent }       from "./home/home.component";
+import { AccountComponent }       from "./accounts/account/account.component";
+import { AccountsComponent }      from "./accounts/accounts.component";
+import { AuthGuardService }      from "./auth-guard.service";
+import { AuthSimpleGuardService } from "./auth-simple-guard.service";
+import { BasicComponent }         from "./basic/basic.component";
+import { CanDeactivateGuard }     from "./servers/edit-server/can-deactivate-guard.service";
+import { EditServerComponent }    from "./servers/edit-server/edit-server.component";
+import { ErrorPageComponent }     from "./error-page/error-page.component";
+import { FirebaseComponent }      from "./firebase/firebase.component";
+import { FormsComponent }         from "./forms/forms.component";
+import { HomeComponent }          from "./home/home.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { PipeComponent }         from "./pipe/pipe.component";
 import { ServerResolverService } from "./servers/server/server-resolver.service";
@@ -37,14 +38,14 @@ const appRoutes: Routes = [
   { path: 'pipe', component: PipeComponent },
   { path: 'recipes', component: RecipesComponent, children: [
       { path: '', component: RecipeStartComponent },
-      { path: 'new', component: RecipeEditComponent },
+      { path: 'new', component: RecipeEditComponent, canActivate: [AuthGuardService] },
       { path: ':id', component: RecipeDetailComponent },
-      { path: ':id/edit', component: RecipeEditComponent }
+      { path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuardService] }
     ]},
   { path: 'shopping-list', component: ShoppingListComponent},
 
   { path: 'servers',
-    canActivateChild: [AuthGuardService],
+    canActivateChild: [AuthSimpleGuardService],
     component: ServersComponent,
     children: [
       { path: ':id', component: ServerComponent, resolve: {server: ServerResolverService} },

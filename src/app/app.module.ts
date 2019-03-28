@@ -8,7 +8,8 @@ import { AccountsComponent }        from './accounts/accounts.component';
 import { AccountsService }          from './accounts.service';
 import { AppComponent }             from './app.component';
 import { AppRoutingModule }         from "./app-routing.module";
-import { AuthGuardService }         from "./auth-guard.service";
+import { AuthGuardService }      from "./auth-guard.service";
+import { AuthSimpleGuardService }   from "./auth-simple-guard.service";
 import { AuthSimpleService }        from "./auth-simple.service";
 import { AuthService }              from "./auth/auth.service";
 import { BasicComponent }           from './basic/basic.component';
@@ -36,6 +37,8 @@ import { RecipeItemComponent }      from './recipes/recipe-list/recipe-item/reci
 import { RecipeListComponent }      from './recipes/recipe-list/recipe-list.component';
 import { RecipeService }            from "./recipes/recipe.service";
 import { ServerComponent }          from './servers/server/server.component';
+import { SigninComponent }       from './auth/signin/signin.component';
+import { SignupComponent }       from './auth/signup/signup.component';
 import { ServerElementComponent }   from './server-element/server-element.component';
 import { ServerResolverService }   from "./servers/server/server-resolver.service";
 import { ServersComponent }        from './servers/servers.component';
@@ -47,8 +50,6 @@ import { ShortenPipe }           from './pipes/shorten.pipe';
 import { UnlessDirective }       from './directive/unless.directive';
 import { UsersComponent }        from './users/users.component';
 import { UserComponent }         from './users/user/user.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
 
 // import { LoggingService } from "./logging.service";
 
@@ -99,8 +100,9 @@ import { SigninComponent } from './auth/signin/signin.component';
   providers: [
     AccountsService,
     AuthService,
-    AuthSimpleService,
     AuthGuardService,
+    AuthSimpleService,
+    AuthSimpleGuardService,
     CanDeactivateGuard,
     DataStorageService,
     FirebaseServerService,

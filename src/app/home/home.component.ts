@@ -10,7 +10,7 @@ import { AuthSimpleService } from "../auth-simple.service";
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router,
-              private authService: AuthSimpleService) { }
+              private authSimpleService: AuthSimpleService) { }
 
   ngOnInit() {
   }
@@ -23,10 +23,10 @@ export class HomeComponent implements OnInit {
   }
 
   onLogin() {
-    this.authService.login();
+    this.authSimpleService.login();
   }
   onLogout() {
-    this.authService.logout();
+    this.authSimpleService.logout();
   }
 
 
