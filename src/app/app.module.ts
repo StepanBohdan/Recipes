@@ -8,7 +8,7 @@ import { AccountsComponent }        from './accounts/accounts.component';
 import { AccountsService }          from './accounts.service';
 import { AppComponent }             from './app.component';
 import { AppRoutingModule }         from './app-routing.module';
-import { AuthGuardService }         from './auth-guard.service';
+import { AuthGuardService }         from './auth/auth-guard.service';
 import { AuthSimpleGuardService }   from './auth-simple-guard.service';
 import { AuthSimpleService }        from './auth-simple.service';
 import { AuthService }              from './auth/auth.service';
@@ -35,15 +35,14 @@ import { ServerElementComponent }   from './server-element/server-element.compon
 import { ServerResolverService }    from './servers/server/server-resolver.service';
 import { ServersComponent }         from './servers/servers.component';
 import { ServersService }           from './servers/servers.service';
-import { ShoppingDetailComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListService }   from './shopping-list/shopping-list.service';
 import { ShortenPipe }           from './pipes/shorten.pipe';
 import { UnlessDirective }       from './directive/unless.directive';
 import { UsersComponent }        from './users/users.component';
 import { UserComponent }         from './users/user/user.component';
-import { RecipesModule }         from "./recipes/recipes.module";
-import { DropdownDirective }     from "./shared/dropdown.directive";
+import { RecipesModule }         from './recipes/recipes.module';
+import { SharedModule }          from './shared/shared.module';
+import { ShoppingListModule }    from "./shopping-list/shopping-list.module";
 
 // import { LoggingService } from './logging.service';
 
@@ -55,7 +54,6 @@ import { DropdownDirective }     from "./shared/dropdown.directive";
     BasicComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    DropdownDirective,
     EditServerComponent,
     ErrorPageComponent,
     FilterPipe,
@@ -68,8 +66,6 @@ import { DropdownDirective }     from "./shared/dropdown.directive";
     ServerComponent,
     ServersComponent,
     ServerElementComponent,
-    ShoppingListComponent,
-    ShoppingDetailComponent,
     ShortenPipe,
     UnlessDirective,
     UserComponent,
@@ -83,7 +79,9 @@ import { DropdownDirective }     from "./shared/dropdown.directive";
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RecipesModule
+    RecipesModule,
+    SharedModule,
+    ShoppingListModule
   ],
   providers: [
     AccountsService,
