@@ -28,7 +28,6 @@ import { UserComponent }         from "./users/user/user.component";
 import { UsersComponent }        from "./users/users.component";
 
 const appRoutes: Routes = [
-  // { path: '', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'accounts', component: AccountsComponent },
   { path: 'basic', component: BasicComponent },
