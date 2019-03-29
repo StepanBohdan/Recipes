@@ -1,5 +1,5 @@
-import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule }                                from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { AccountsComponent }      from './accounts/accounts.component';
 import { AuthSimpleGuardService } from './auth-simple-guard.service';
@@ -9,14 +9,14 @@ import { EditServerComponent }    from './servers/edit-server/edit-server.compon
 import { ErrorPageComponent }     from './error-page/error-page.component';
 import { FirebaseComponent }      from './firebase/firebase.component';
 import { FormsComponent }         from './forms/forms.component';
-import { HomeComponent }          from './home/home.component';
-import { PipeComponent }         from './pipe/pipe.component';
-import { ServerResolverService } from './servers/server/server-resolver.service';
-import { ServerComponent }       from './servers/server/server.component';
-import { ServersComponent }      from './servers/servers.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { UserComponent }         from './users/user/user.component';
-import { UsersComponent }        from './users/users.component';
+import { HomeComponent }          from './core/home/home.component';
+import { PipeComponent }          from './pipe/pipe.component';
+import { ServerResolverService }  from './servers/server/server-resolver.service';
+import { ServerComponent }        from './servers/server/server.component';
+import { ServersComponent }       from './servers/servers.component';
+import { ShoppingListComponent }  from './shopping-list/shopping-list.component';
+import { UserComponent }          from './users/user/user.component';
+import { UsersComponent }         from './users/users.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -45,7 +45,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     // RouterModule.forRoot(appRoutes, {useHash: true})
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})
   ],
   exports: [RouterModule]
 })
