@@ -29,20 +29,18 @@ import { NewAccountComponent }      from './new-account/new-account.component';
 import { PipeComponent }            from './pipe/pipe.component';
 import { RecipeService }            from './recipes/recipe.service';
 import { ServerComponent }          from './servers/server/server.component';
-import { SigninComponent }          from './auth/signin/signin.component';
-import { SignupComponent }          from './auth/signup/signup.component';
 import { ServerElementComponent }   from './server-element/server-element.component';
 import { ServerResolverService }    from './servers/server/server-resolver.service';
 import { ServersComponent }         from './servers/servers.component';
 import { ServersService }           from './servers/servers.service';
-import { ShoppingListService }   from './shopping-list/shopping-list.service';
-import { ShortenPipe }           from './pipes/shorten.pipe';
-import { UnlessDirective }       from './directive/unless.directive';
-import { UsersComponent }        from './users/users.component';
-import { UserComponent }         from './users/user/user.component';
-import { RecipesModule }         from './recipes/recipes.module';
-import { SharedModule }          from './shared/shared.module';
-import { ShoppingListModule }    from "./shopping-list/shopping-list.module";
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { ShortenPipe }         from './pipes/shorten.pipe';
+import { UnlessDirective }     from './directive/unless.directive';
+import { UsersComponent }      from './users/users.component';
+import { UserComponent }       from './users/user/user.component';
+import { SharedModule }        from './shared/shared.module';
+import { ShoppingListModule }  from "./shopping-list/shopping-list.module";
+import { AuthModule }          from "./auth/auth.module";
 
 // import { LoggingService } from './logging.service';
 
@@ -69,17 +67,15 @@ import { ShoppingListModule }    from "./shopping-list/shopping-list.module";
     ShortenPipe,
     UnlessDirective,
     UserComponent,
-    UsersComponent,
-    SignupComponent,
-    SigninComponent
+    UsersComponent
   ],
   imports: [
+    AuthModule,
     AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RecipesModule,
     SharedModule,
     ShoppingListModule
   ],

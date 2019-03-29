@@ -14,8 +14,6 @@ import { PipeComponent }         from './pipe/pipe.component';
 import { ServerResolverService } from './servers/server/server-resolver.service';
 import { ServerComponent }       from './servers/server/server.component';
 import { ServersComponent }      from './servers/servers.component';
-import { SigninComponent }       from './auth/signin/signin.component';
-import { SignupComponent }       from './auth/signup/signup.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { UserComponent }         from './users/user/user.component';
 import { UsersComponent }        from './users/users.component';
@@ -28,6 +26,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: FormsComponent },
   { path: 'pipe', component: PipeComponent },
+  { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule'},
   { path: 'shopping-list', component: ShoppingListComponent},
   { path: 'servers',
     canActivateChild: [AuthSimpleGuardService],
@@ -41,8 +40,6 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'not-found', component: ErrorPageComponent, data: { message: 'Not found' } },
-  { path: 'signup', component: SignupComponent },
-  { path: 'signin', component: SigninComponent },
   // { path: '**', redirectTo: '/not-found' }, must be the last one, forChild
 ];
 @NgModule({
