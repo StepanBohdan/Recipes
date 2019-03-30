@@ -10,7 +10,7 @@ import { RecipeService }                                 from '../recipe.service
 })
 export class RecipeEditComponent implements OnInit {
   id: number;
-  editMode: boolean;
+  editMode: false;
   recipeForm: FormGroup;
 
   constructor(private route: ActivatedRoute,
@@ -20,13 +20,10 @@ export class RecipeEditComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .subscribe(
-        (params) => {
+        (params: Params) => {
           this.id = +params.id;
-          if (params.id != null) {
-            this.editMode = true;
-          } else {
-            this.editMode = false;
-          }
+          // @ts-ignore
+          this.editMode = params.id != null;
           // this.editMode = params['id'] != null; if id = undefined return false
           // console.log(this.editMode)
           this.initForm();
