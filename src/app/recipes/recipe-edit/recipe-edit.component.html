@@ -29,7 +29,7 @@
       </div>
       <div class="row">
         <div class="col-sm-12">
-          <img class="img-responsive"
+          <img class="img-fluid"
                [src]="imagePath.value"
                alt="image">
         </div>
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12" >
+        <div class="col-sm-12" formArrayName="ingredients">
           <div class="row"
                *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index"
                [formGroupName]="i">

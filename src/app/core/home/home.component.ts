@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
-import { AuthSimpleService } from "../auth-simple.service";
+import { AuthSimpleService } from "../../auth-simple.service";
 
 @Component({
   selector: 'app-home',
