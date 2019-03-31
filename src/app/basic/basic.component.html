@@ -1,8 +1,5 @@
 <h2>Basic</h2>
 <div class="wrap" style="max-width: 520px;">
-  <app-servers
-  (serverCreated)="onServerAdded($event)"
-  ></app-servers>
 
   <app-server-element *ngFor="let serverElement of serverElements"
   [srvElement]="serverElement"

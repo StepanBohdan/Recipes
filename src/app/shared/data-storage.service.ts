@@ -1,9 +1,9 @@
 import { Injectable }    from '@angular/core';
-import { HttpClient }    from "@angular/common/http";
-import { RecipeService } from "../recipes/recipe.service";
-import { Recipe }        from "../recipes/recipe.model";
-import { map }           from "rxjs/operators";
-import { AuthService }   from "../auth/auth.service";
+import { HttpClient }    from '@angular/common/http';
+import { RecipeService } from '../recipes/recipe.service';
+import { Recipe }        from '../recipes/recipe.model';
+import { map }           from 'rxjs/operators';
+import { AuthService }   from '../auth/auth.service';
 
 @Injectable()
 export class DataStorageService {
@@ -21,19 +21,19 @@ export class DataStorageService {
 
   getRecipes() {
     const token = this.authServise.getToken();
-    this.httpClient.get(`${this.recipeStorageUrl}/` + 'recipes.json?auth=' + token)
+    this.httpClient.get<Recipe[]>(`${this.recipeStorageUrl}/` + 'recipes.json?auth=' + token)
       .pipe(
-        map((recipes: Recipe[]) => {
-          for (let recipe of recipes) {
-            if (!recipe['ingredients']) {
-              recipe['ingredients'] = [];
+        map((recipes) => {
+          for (const recipe of recipes) {
+            if (!recipe.ingredients) {
+              recipe.ingredients = [];
             }
           }
-          return recipes
+          return recipes;
         })
       )
-      .subscribe((recipes: Recipe[]) => {
-        this.recipeService.setRecipes(recipes)
-      })
+      .subscribe((recipes) => {
+        this.recipeService.setRecipes(recipes);
+      });
   }
 }

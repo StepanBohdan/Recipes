@@ -13,7 +13,7 @@ export class ServersComponent implements OnInit {
   // serverName = 'test';
   // serverCreated = false;
   // servers = ['testServer', 'testServer2'];
-    private servers: {id: number, name: string, status: string}[] = [];
+  servers: {id: number, name: string, status: string}[] = [];
 
     @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
     newServerName = '';
