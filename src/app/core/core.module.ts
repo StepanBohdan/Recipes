@@ -14,7 +14,6 @@ import { CanDeactivateGuard }    from '../servers/edit-server/can-deactivate-gua
 import { DataStorageService }    from '../shared/data-storage.service';
 import { FirebaseServerService } from '../firebase/firebase-server.service';
 import { RecipeService }         from '../recipes/recipe.service';
-import { ShoppingListService }   from '../shopping-list/shopping-list.service';
 import { ServersService }        from '../servers/servers.service';
 import { ServerResolverService } from '../servers/server/server-resolver.service';
 import { AuthInterceptor }       from '../shared/auth.interceptor';
@@ -43,7 +42,6 @@ import { LoggingInterceptor }    from '../shared/logging.interceptor';
     DataStorageService,
     FirebaseServerService,
     RecipeService,
-    ShoppingListService,
     ServersService,
     ServerResolverService,
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
