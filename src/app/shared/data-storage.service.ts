@@ -25,7 +25,7 @@ export class DataStorageService {
     //   });
     const req = new HttpRequest('PUT', `${this.recipeStorageUrl}/`, this.recipeService.getRecipes(),
       {reportProgress: true, params: new HttpParams().set('auth', token)
-      })
+      });
     return this.httpClient.request(req);
   }
 

@@ -1,5 +1,6 @@
-import { IngredientModel }     from '../../shared/ingredient.model';
 import * as ShoppingListActions from './shopping-list.actions';
+
+import { IngredientModel }     from '../../shared/ingredient.model';
 
 export interface AppState {
   shoppingList: State;
@@ -10,7 +11,7 @@ export interface State {
   editedIngredient: IngredientModel;
   editedIngredientIndex: number;
 }
-const initialState = {
+const initialState: State = {
   ingredients: [
     new IngredientModel('Potato', 3),
     new IngredientModel('Meal', 1)
