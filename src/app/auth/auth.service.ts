@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as firebase  from 'firebase';
-import { Router }     from "@angular/router";
+import { Router }     from '@angular/router';
 
 @Injectable()
 export class AuthService {
@@ -12,8 +12,8 @@ export class AuthService {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .catch(
         error => console.log(error)
-      )
-  };
+      );
+  }
 
   signinUser(email: string, password: string) {
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -23,13 +23,13 @@ export class AuthService {
           firebase.auth().currentUser.getIdToken()
             .then(
               (token: string) => this.token = token
-            )
+            );
         }
       )
       .catch(
         error => console.log(error)
       );
-  };
+  }
 
   logout() {
     firebase.auth().signOut();
@@ -43,7 +43,7 @@ export class AuthService {
       );
     return this.token;
   }
-  //not a best solution, cause tiken can expire and user will not login
+  // not a best solution, cause tiken can expire and user will not login
   isAuthenticated() {
     return this.token != null;
   }
