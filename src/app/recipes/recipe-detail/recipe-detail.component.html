@@ -2,12 +2,12 @@
   <div class="col-sm-12">
     <div class="wrapImg">
       <img class="img-fluid"
-           [src]="recipe.imagePath"
-           [alt]="recipe.name">
+           [src]="(recipeState | async).recipes[id].imagePath"
+           [alt]="(recipeState | async).recipes[id].name">
     </div>
 
 
-    <h2>{{ recipe.name }}</h2>
+    <h2>{{ (recipeState | async).recipes[id].name }}</h2>
 
     <div class="btn-group"
          appDropdown
@@ -29,12 +29,12 @@
       </ul>
     </div>
 
-    <p>{{ recipe.description }}</p>
+    <p>{{ (recipeState | async).recipes[id].description }}</p>
 
     <ul class="list-group">
       <li
       class="list-group-item"
-      *ngFor="let ingredient of recipe.ingredients">
+      *ngFor="let ingredient of (recipeState | async).recipes[id].ingredients">
         {{ ingredient.name }} - {{ ingredient.amount }}
       </li>
     </ul>

@@ -2,7 +2,10 @@ import { BrowserModule }                    from '@angular/platform-browser';
 import { HttpClientModule }                 from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule }                         from '@angular/core';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule }                      from '@ngrx/store';
+import { StoreRouterConnectingModule }      from '@ngrx/router-store';
+import { StoreDevtoolsModule }              from '@ngrx/store-devtools';
+import { EffectsModule }                    from '@ngrx/effects';
 
 import { AccountComponent }         from './accounts/account/account.component';
 import { AccountsComponent }        from './accounts/accounts.component';
@@ -21,18 +24,17 @@ import { PipeComponent }            from './pipe/pipe.component';
 import { ServerComponent }          from './servers/server/server.component';
 import { ServerElementComponent }   from './server-element/server-element.component';
 import { ServersComponent }         from './servers/servers.component';
-import { ShortenPipe }        from './pipes/shorten.pipe';
-import { UnlessDirective }    from './directive/unless.directive';
-import { UsersComponent }              from './users/users.component';
-import { UserComponent }               from './users/user/user.component';
-import { SharedModule }                from './shared/shared.module';
-import { ShoppingListModule }          from './shopping-list/shopping-list.module';
-import { AuthModule }                  from './auth/auth.module';
-import { CoreModule }                  from './core/core.module';
-import { reducers }                    from './store/app.reducers';
-import { EffectsModule }               from '@ngrx/effects';
-import { AuthEffects }                 from './auth/store/auth.effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { ShortenPipe }              from './pipes/shorten.pipe';
+import { UnlessDirective }          from './directive/unless.directive';
+import { UsersComponent }           from './users/users.component';
+import { UserComponent }            from './users/user/user.component';
+import { SharedModule }             from './shared/shared.module';
+import { ShoppingListModule }       from './shopping-list/shopping-list.module';
+import { AuthModule }               from './auth/auth.module';
+import { CoreModule }               from './core/core.module';
+import { reducers }                 from './store/app.reducers';
+import { AuthEffects }              from './auth/store/auth.effects';
+import { environment }              from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     ShoppingListModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AuthEffects]),
-    StoreRouterConnectingModule
+    StoreRouterConnectingModule,
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   bootstrap: [AppComponent]
 })
