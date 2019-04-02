@@ -23,15 +23,16 @@ import { ServerElementComponent }   from './server-element/server-element.compon
 import { ServersComponent }         from './servers/servers.component';
 import { ShortenPipe }        from './pipes/shorten.pipe';
 import { UnlessDirective }    from './directive/unless.directive';
-import { UsersComponent }     from './users/users.component';
-import { UserComponent }      from './users/user/user.component';
-import { SharedModule }       from './shared/shared.module';
-import { ShoppingListModule } from './shopping-list/shopping-list.module';
-import { AuthModule }         from './auth/auth.module';
-import { CoreModule }         from './core/core.module';
-import { reducers }           from './store/app.reducers';
-import { EffectsModule }      from '@ngrx/effects';
-import { AuthEffects }        from './auth/store/auth.effects';
+import { UsersComponent }              from './users/users.component';
+import { UserComponent }               from './users/user/user.component';
+import { SharedModule }                from './shared/shared.module';
+import { ShoppingListModule }          from './shopping-list/shopping-list.module';
+import { AuthModule }                  from './auth/auth.module';
+import { CoreModule }                  from './core/core.module';
+import { reducers }                    from './store/app.reducers';
+import { EffectsModule }               from '@ngrx/effects';
+import { AuthEffects }                 from './auth/store/auth.effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { AuthEffects }        from './auth/store/auth.effects';
     SharedModule,
     ShoppingListModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([AuthEffects])
+    EffectsModule.forRoot([AuthEffects]),
+    StoreRouterConnectingModule
   ],
   bootstrap: [AppComponent]
 })

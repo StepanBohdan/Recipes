@@ -6,7 +6,6 @@ import { HomeComponent }          from './home/home.component';
 import { SharedModule }           from '../shared/shared.module';
 import { AppRoutingModule }       from '../app-routing.module';
 import { AccountsService }        from '../accounts.service';
-import { AuthService }            from '../auth/auth.service';
 import { AuthGuardService }       from '../auth/auth-guard.service';
 import { AuthSimpleService }      from '../auth-simple.service';
 import { AuthSimpleGuardService } from '../auth-simple-guard.service';
@@ -34,7 +33,6 @@ import { LoggingInterceptor }    from '../shared/logging.interceptor';
   ],
   providers: [
     AccountsService,
-    AuthService,
     AuthGuardService, //can move to recipes-routing cause use only in one module
     AuthSimpleService,
     AuthSimpleGuardService,
