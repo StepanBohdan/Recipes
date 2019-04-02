@@ -21,7 +21,7 @@ import { PipeComponent }            from './pipe/pipe.component';
 import { ServerComponent }          from './servers/server/server.component';
 import { ServerElementComponent }   from './server-element/server-element.component';
 import { ServersComponent }         from './servers/servers.component';
-import { ShortenPipe }         from './pipes/shorten.pipe';
+import { ShortenPipe }        from './pipes/shorten.pipe';
 import { UnlessDirective }    from './directive/unless.directive';
 import { UsersComponent }     from './users/users.component';
 import { UserComponent }      from './users/user/user.component';

@@ -11,19 +11,19 @@ export const STOP_EDIT = 'STOP_EDIT';
 export class AddIngredient implements Action {
   readonly type = ADD_INGREDIENT;
 
-  constructor (public payload: IngredientModel) {};
+  constructor(public payload: IngredientModel) {}
 }
 
 export class AddIngredients implements Action {
   readonly type = ADD_INGREDIENTS;
 
-  constructor (public payload: IngredientModel[]) {};
+  constructor(public payload: IngredientModel[]) {}
 }
 
 export class UpdateIngredient implements Action {
   readonly type = UPDATE_INGREDIENT;
 
-  constructor (public payload: {ingredient: IngredientModel}) {};
+  constructor(public payload: {ingredient: IngredientModel}) {}
 }
 
 export class DeleteIngredient implements Action {
@@ -33,7 +33,7 @@ export class DeleteIngredient implements Action {
 export class StartEdit implements Action {
   readonly type = START_EDIT;
 
-  constructor (public payload: number) {};
+  constructor(public payload: number) {}
 }
 
 export class StopEdit implements Action {
