@@ -62,7 +62,7 @@ import { environment }              from '../environments/environment';
   imports: [
     AuthModule,
     AppRoutingModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: "my-app"}),
     CoreModule,
     FormsModule,
     HttpClientModule,
