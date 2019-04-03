@@ -10,9 +10,7 @@ import { AuthGuardService }       from '../auth/auth-guard.service';
 import { AuthSimpleService }      from '../auth-simple.service';
 import { AuthSimpleGuardService } from '../auth-simple-guard.service';
 import { CanDeactivateGuard }    from '../servers/edit-server/can-deactivate-guard.service';
-import { DataStorageService }    from '../shared/data-storage.service';
 import { FirebaseServerService } from '../firebase/firebase-server.service';
-import { RecipeService }         from '../recipes/recipe.service';
 import { ServersService }        from '../servers/servers.service';
 import { ServerResolverService } from '../servers/server/server-resolver.service';
 import { AuthInterceptor }       from '../shared/auth.interceptor';
@@ -37,9 +35,7 @@ import { LoggingInterceptor }    from '../shared/logging.interceptor';
     AuthSimpleService,
     AuthSimpleGuardService,
     CanDeactivateGuard,
-    DataStorageService,
     FirebaseServerService,
-    RecipeService,
     ServersService,
     ServerResolverService,
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

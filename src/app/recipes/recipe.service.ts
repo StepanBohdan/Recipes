@@ -28,28 +28,4 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
-  getRecipe(index: number) {
-    return this.recipes[index]
-  }
-
-  // addIngredientsToShoppingList(ingredients: IngredientModel[]) {
-  //   // this.shoppingListService.addIngredients(ingredients);
-  //   this.store.dispatch(new ShoppingListActions.AddIngredients(ingredients));
-  // }
-
-  addRecipe(recipe: Recipe) {
-    this.recipes.push(recipe);
-    this.recipesChanged.next(this.recipes.slice());
-  }
-
-  updateRecipe(index: number, newRecipe: Recipe) {
-    this.recipes[index] = newRecipe;
-    this.recipesChanged.next(this.recipes.slice());
-  }
-
-  deleteRecipe(index: number) {
-    this.recipes.splice(index, 1);
-    this.recipesChanged.next(this.recipes.slice());
-  }
-
 }
