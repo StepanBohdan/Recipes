@@ -37,6 +37,7 @@ import { AuthEffects }             from './auth/store/auth.effects';
 import { environment }             from '../environments/environment';
 import { AnimationComponent }      from './animation/animation.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     UnlessDirective,
     UserComponent,
     UsersComponent,
-    AnimationComponent
+    AnimationComponent,
+    PostComponent
   ],
   imports: [
     AuthModule,
