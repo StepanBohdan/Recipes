@@ -38,6 +38,7 @@ import { environment }             from '../environments/environment';
 import { AnimationComponent }      from './animation/animation.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { PostComponent } from './post/post.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { PostComponent } from './post/post.component';
   imports: [
     AuthModule,
     AppRoutingModule,
-    BrowserModule.withServerTransition({appId: "my-app"}),
+    BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
     FormsModule,
@@ -78,7 +79,8 @@ import { PostComponent } from './post/post.component';
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AuthEffects]),
     StoreRouterConnectingModule,
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   bootstrap: [AppComponent]
 })
