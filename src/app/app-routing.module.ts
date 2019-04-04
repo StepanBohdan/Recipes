@@ -2,6 +2,7 @@ import { NgModule }                                from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 import { AccountsComponent }      from './accounts/accounts.component';
+import { AnimationComponent }      from './animation/animation.component';
 import { AuthSimpleGuardService } from './auth-simple-guard.service';
 import { BasicComponent }         from './basic/basic.component';
 import { CanDeactivateGuard }     from './servers/edit-server/can-deactivate-guard.service';
@@ -21,6 +22,7 @@ import { UsersComponent }         from './users/users.component';
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'accounts', component: AccountsComponent },
+  { path: 'animation', component: AnimationComponent },
   { path: 'basic', component: BasicComponent },
   { path: 'firebase', component: FirebaseComponent },
   { path: 'home', component: HomeComponent },

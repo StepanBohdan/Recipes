@@ -28,13 +28,15 @@ import { ShortenPipe }              from './pipes/shorten.pipe';
 import { UnlessDirective }          from './directive/unless.directive';
 import { UsersComponent }           from './users/users.component';
 import { UserComponent }            from './users/user/user.component';
-import { SharedModule }             from './shared/shared.module';
-import { ShoppingListModule }       from './shopping-list/shopping-list.module';
-import { AuthModule }               from './auth/auth.module';
-import { CoreModule }               from './core/core.module';
-import { reducers }                 from './store/app.reducers';
-import { AuthEffects }              from './auth/store/auth.effects';
-import { environment }              from '../environments/environment';
+import { SharedModule }            from './shared/shared.module';
+import { ShoppingListModule }      from './shopping-list/shopping-list.module';
+import { AuthModule }              from './auth/auth.module';
+import { CoreModule }              from './core/core.module';
+import { reducers }                from './store/app.reducers';
+import { AuthEffects }             from './auth/store/auth.effects';
+import { environment }             from '../environments/environment';
+import { AnimationComponent }      from './animation/animation.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -57,12 +59,14 @@ import { environment }              from '../environments/environment';
     ShortenPipe,
     UnlessDirective,
     UserComponent,
-    UsersComponent
+    UsersComponent,
+    AnimationComponent
   ],
   imports: [
     AuthModule,
     AppRoutingModule,
     BrowserModule.withServerTransition({appId: "my-app"}),
+    BrowserAnimationsModule,
     CoreModule,
     FormsModule,
     HttpClientModule,
